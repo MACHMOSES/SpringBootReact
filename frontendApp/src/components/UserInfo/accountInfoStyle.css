@@ -1,0 +1,21 @@
+.accountInfoStyle {
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.userAccountButtom {
+    display: flex;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.labelStyle{
+    color: #1010108a;
+    font-weight: 500;
+    padding-left: 16px;
+}
