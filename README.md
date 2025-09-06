@@ -63,7 +63,7 @@ fullstack-application/
    ```
 3. Start the React development server:
    ```sh
-   npm start
+   npm run webpack
    ```
 
 ### Accessing the App
