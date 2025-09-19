@@ -20,8 +20,8 @@ const App = ()=>{
             response =>setUsers(response.data)
         );
     }
-
-    const addUser = (user)=>{   //why is it taking a parameter
+        // the function will take a parameter as the user who is to be save
+    const addUser = (user)=>{  
         axios.post('/user/save', user)
         .then(
             (reponse)=>{
@@ -32,7 +32,7 @@ const App = ()=>{
         )
     }
 
-    const removeUser = ()=>{
+    const removeUser = (id)=>{
         axios.delete(`/user/${id}`)
         .then(
             ()=>{
@@ -49,7 +49,7 @@ const App = ()=>{
             <div>
                 <Header title = "User Registration Details"/>
                 <RegistarUser addUser = {addUser}/>
-                <Users users = {users} removeUser={removeUser}/>
+                <Users users={users} removeUser={removeUser} getUser ={getUser}/>
             </div>
         )
     }

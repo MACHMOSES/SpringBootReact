@@ -6,7 +6,8 @@ const Users = ({users, removeUser})=>{
         
             <div>
                 {users.map((user) =>{
-                    <UserInfo user = {user} removeUser={props.removeUser } key={user.id}/>
+                 return (<UserInfo user = {user} removeUser={removeUser} key={user.id}/>);  
+                    
                 })}
             </div>
     )
