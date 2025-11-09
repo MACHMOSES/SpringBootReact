@@ -13,9 +13,10 @@ module.exports = {
   // Output configuration for the bundled files
   output: {
     // Path where the bundled files will be placed (Spring Boot static resources)
-    path: path.resolve(__dirname, './target/classes/static/built/'), 
+
+    path: path.resolve(__dirname, './build/'), 
     filename: 'bundle.js', // Name of the bundled JavaScript file
-    publicPath: '/built/', // Public path for assets within the bundle
+    publicPath: '/build/', // Public path for assets within the bundle
   },
 
   // Configuration for the development server (for React development)

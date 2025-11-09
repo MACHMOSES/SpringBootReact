@@ -4,7 +4,9 @@
   "description": "fullstack-application",
   "main": "App.js",
   "scripts": {
-    "webpack": "webpack --watch  --mode development --devtool source-map  --output-path ./target/classes/static/built --output-filename bundle.js"
+
+    "build": "webpack  --mode development --devtool source-map  --output-path ./build --output-filename bundle.js"
+
   },
   "author": "moses macharia",
   "license": "MIT",
@@ -14,12 +16,6 @@
     "@babel/preset-react": "^7.27.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
-    "@mui/base": "^5.0.0-beta.70",
-    "@mui/icons-material": "^7.3.2",
-    "@mui/material": "^7.3.2",
-    "axios": "^1.10.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
