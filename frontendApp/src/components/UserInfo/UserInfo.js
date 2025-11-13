@@ -35,15 +35,7 @@ const UserInfo = ({ user, removeUser }) => {
       <p>{email}</p>
       <p>{username}</p>
       <div>
-        {/* className="userAccountButtom"> */}
         <button onClick={(e) => deleteUser(id)}>Delete</button>
-        {/* <IconButton style = {{color: '#888990'}}>
-                    <CreateIcon/>
-                </IconButton>
-
-                <IconButton color = 'secondray' onClick= {(e)=>deleteUser(id)}>
-                    <DeleteIcon />
-                </IconButton> */}
       </div>
     </div>
   );

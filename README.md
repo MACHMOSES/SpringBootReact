@@ -1,11 +1,7 @@
 # Fullstack Application
 
-<<<<<<< HEAD
-A full-stack user registration application built with Spring Boot (backend) and React (frontend).
-=======
 A full-stack **User Registration** application built with **Spring Boot (Java 21)** on the backend and **React (Node 20)** on the frontend.  
 It supports **Docker multi-stage builds**, combining both backend and frontend into a single production-ready container.
->>>>>>> c38d0c22 (my docker has worked)
 
 ## Features
 
@@ -13,14 +9,8 @@ It supports **Docker multi-stage builds**, combining both backend and frontend i
 - View all registered users
 - Delete users
 - Responsive UI
-<<<<<<< HEAD
+<ng:** CSS
 
-## Technologies Used
-
-- **Backend:** Java, Spring Boot, Maven
-- **Frontend:** React, Axios
-- **Styling:** CSS
-=======
 - Unified backend + frontend Docker image
 
 ## Technologies Used
@@ -32,7 +22,7 @@ It supports **Docker multi-stage builds**, combining both backend and frontend i
 | **Database**         | H2 (in-memory)                    |
 | **Containerization** | Docker (multi-stage build)        |
 | **Styling**          | CSS                               |
->>>>>>> c38d0c22 (my docker has worked)
+
 
 ## Project Structure
 
@@ -40,7 +30,6 @@ It supports **Docker multi-stage builds**, combining both backend and frontend i
 fullstack-application/
 ├── src/
 │   ├── main/
-<<<<<<< HEAD
 │   │   ├── java/         # Spring Boot backend code
 │   │   ├── js/           # React frontend entry point (App.js)
 │   │   └── resources/    # Static resources and CSS
@@ -50,39 +39,22 @@ fullstack-application/
 ├── package.json
 ├── pom.xml
 └── README.md
-=======
-│   │   ├── java/               # Spring Boot backend code
-│   │   ├── resources/          # application.properties, templates, etc.
-│   └── test/                   # Backend tests
-├── frontendApp/                # React frontend app
-│   ├── package.json
-│   ├── yarn.lock
-│   └── src/
-├── pom.xml                     # Maven configuration
-├── Dockerfile                  # Multi-stage Docker build
-└── README.md                   # Documentation
->>>>>>> c38d0c22 (my docker has worked)
+
 ```
 
 ## Getting Started
 
 ### Prerequisites
-
-<<<<<<< HEAD
-- Java 17+
-- Maven
-- Node.js & npm
-=======
 - Java **21+**
 - Maven **3.9+**
 - Node.js **20+**
 - Yarn or npm
->>>>>>> c38d0c22 (my docker has worked)
+
 
 ### Backend Setup
 
 1. Navigate to the project root:
-<<<<<<< HEAD
+
    ```sh
    cd fullstack-application
    ```
@@ -124,7 +96,6 @@ Feel free to fork the repository and submit pull requests.
 ## License
 
 This project is licensed under the MIT License.
-=======
    ```bash
    cd fullstack-application
    ```
@@ -166,7 +137,8 @@ This project supports Docker multi-stage builds.
 Run the following from the project root:
 
 ```bash
-docker build -t springboot-master .
+docker compose build 
+docker compose up
 ```
 
 This will:
@@ -227,4 +199,4 @@ This project is licensed under the **MIT License**.
 **Moses Macharia**  
 Full-Stack Developer | Spring Boot + React + Docker  
 📧 [wanguimacharia40@gmail.com](mailto:wanguimacharia40@gmail.com)
->>>>>>> c38d0c22 (my docker has worked)
+
