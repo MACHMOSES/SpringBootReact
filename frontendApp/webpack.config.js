@@ -4,12 +4,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "production", // Changed from "development" for optimized, production-ready builds
 
-  entry: "./src/main/js/index.js",
+  entry: "./src/js/index.js",
 
   // devtool: "source-map",  // Commented out for production (removes source maps to reduce bundle size)
 
   output: {
-    path: path.resolve(__dirname, "./src/main/resources/static/build/"),
+    path: path.resolve(__dirname, "./build/"),
     filename: "bundle.js",
     publicPath: "/static/build/",
   },

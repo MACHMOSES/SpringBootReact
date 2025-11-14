@@ -6,15 +6,14 @@ FROM node:20-alpine AS frontend-build
 WORKDIR /frontend
 # Copy frontend files and other files to this image
 COPY package.json yarn.lock ./
-COPY frontendApp ./frontendApp  
-COPY webpack.config.js ./
-COPY /src/main/js ./src/main/js
-COPY /src/main/resources/templates ./src/main/resources/templates
-COPY /src/main/resources/static ./src/main/resources/static
+COPY frontendApp/webpack.config.js ./ 
+COPY frontendApp .  
+COPY src/main/resources/templates ./src/main/resources/templates
+COPY src/main/resources/static ./src/main/resources/static
 
 
 RUN yarn install
-RUN yarn build  # Outputs to ./src/main/resources/static/build/ based on your config
+RUN yarn build  
 
 # Stage 2: Build the backend (Spring Boot) and integrate frontend
 FROM maven:3.9.11-eclipse-temurin-21-alpine AS backend-build
@@ -23,7 +22,8 @@ WORKDIR /workspace
 COPY pom.xml .
 COPY src ./src
 # Copy frontend build output to Spring Boot's static folder
-COPY --from=frontend-build /frontend/src/main/resources/static/build ./src/main/resources/static/build/
+COPY --from=frontend-build /frontend/build ./src/main/resources/static/
+
 # Now build the backend
 RUN mvn -DskipTests package
 

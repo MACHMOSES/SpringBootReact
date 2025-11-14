@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react"
 import ReactDOM from 'react-dom';
 import {createRoot} from 'react-dom/client'
-import Header from "../../../frontendApp/src/components/layout/Header";
-import RegistarUser from "../../../frontendApp/src/components/Register-user/RegisterUser"
-import Users from '../../../frontendApp/src/components/Users/Users'
+import Header from "../components/layout/Header";
+import RegistarUser from "../components/Register-user/RegisterUser"
+import Users from '../components/Users/Users'
 import axios from 'axios'
-import '../resources/static/main.css'
+// import '../../main/resources/static/main.css'
 
 const App = ()=>{
     const [users, setUsers] = useState([])
