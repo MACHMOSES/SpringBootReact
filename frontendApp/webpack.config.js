@@ -1,21 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 module.exports = {
-  mode: "production", // Changed from "development" for optimized, production-ready builds
-
+  mode: "production", // Use 'development' for dev builds
   entry: "./src/js/index.js",
-
-  // devtool: "source-map",  // Commented out for production (removes source maps to reduce bundle size)
-
   output: {
-    path: path.resolve(__dirname, "./build/"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/static/build/",
+    clean: true, // Cleans dist/ on rebuild
   },
-
-  // devServer: { ... },  // Commented out for production builds (not needed in Docker)
-
   module: {
     rules: [
       {
@@ -23,40 +15,24 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
         },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-      // Added rules for .json and .wasm (Webpack 5 built-in support)
-      {
-        test: /\.json$/,
-        type: "json",
-      },
-      {
-        test: /\.wasm$/,
-        type: "webassembly/async",
+        use: ["style-loader", "css-loader"], // Add if using CSS
       },
     ],
   },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/main/resources/templates/index.html",
-      filename: "index.html",
-    }),
-  ],
-
   resolve: {
     extensions: [".js", ".jsx"],
   },
-
-  // Added for WebAssembly support if needed
-  experiments: {
-    asyncWebAssembly: true,
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
+  devServer: {
+    port: 3000, // For local dev (run with npm start)
+    historyApiFallback: true, // For React Router
   },
 };

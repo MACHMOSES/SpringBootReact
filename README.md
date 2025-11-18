@@ -137,8 +137,8 @@ This project supports Docker multi-stage builds.
 Run the following from the project root:
 
 ```bash
-docker compose build 
-docker compose up
+docker compose build  
+docker compose up 
 ```
 
 This will:
