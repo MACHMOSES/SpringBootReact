@@ -6,8 +6,8 @@ FROM node:20-alpine AS frontend-build
 WORKDIR /app/frontend
 # Copy frontend files and other files to this image
 
-COPY frontendApp/package.json frontendApp/yarn.lock ./
-
+COPY frontendApp/package.json ./
+COPY frontendApp/yarn.lock ./
 
 RUN yarn install
 
